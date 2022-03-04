@@ -3,8 +3,6 @@ package multiflight
 import (
 	"context"
 	"errors"
-	"fmt"
-
 	"sync"
 )
 
@@ -126,8 +124,4 @@ func (g *Group[K, V]) setCallErr(e *ent[K, V], err error) {
 	e.err = err
 	e.wg.Done()
 	delete(g.m, e.key)
-}
-
-func (g *Group[int, string]) Test() {
-	fmt.Println("...")
 }
